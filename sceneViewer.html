@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+ <!-- 
+ ==========================================================================
+ $Id: camera.html,v 1.1 2020/02/12 05:07:30 jlang Exp $
+ Simple html page to experiment with Three.js 
+ ==========================================================================
+ (C)opyright:
+
+   Jochen Lang
+   EECS, University of Ottawa
+   800 King Edward Ave.
+   Ottawa, On., K1N 6N5
+   Canada.
+   http:www.eecs.uottawa.ca
+
+ Creator: jlang (Jochen Lang)
+ Email:   jlang@uottawa.ca
+ ==========================================================================
+ $Log: camera.html,v $
+ Revision 1.1  2020/02/12 05:07:30  jlang
+ Intermediate draft.
+
+  ========================================================================== 
+-->
+<html>
+  <head>
+    <title>Scene Viewer</title>
+    <style>
+        html, body {
+          margin: 0;
+          height: 100%;
+        }
+        #c {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+        .split {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+        }
+        .split>div {
+          width: 100%;
+          height: 100%;
+        }
+    </style>
+</head>
+  <body>	
+    <!-- Three.js API -->
+    <script type="text/javascript" src="../../node_modules/three/build/three.js"></script>
+    <!-- Checking WebGL version example in Three.js -->
+    <script type="text/javascript" src="../../node_modules/three/examples/js/WebGL.js"></script>
+	  <!-- Load an obj mesh from file -->
+	  <script type="text/javascript" src= "../../node_modules/three/examples/js/loaders/OBJLoader.js"></script>
+    <!-- MTL Obj loader -->
+    <script type="text/javascript" src= "../../node_modules/three/examples/js/loaders/MTLLoader.js"></script>
+    <!-- dat.gui for simple ui -->
+    <script type="text/javascript" src="../../node_modules/dat.gui/build/dat.gui.js"></script>
+    <!-- js Code -->
+    <script type="text/javascript" src="sceneViewer.js"></script>
+    <canvas id="c"></canvas>
+    <div class="split">
+      <div id="view1" tabindex="1"></div>
+      <div id="view2" tabindex="2"></div>
+    </div>
+  </body>
+</html>
